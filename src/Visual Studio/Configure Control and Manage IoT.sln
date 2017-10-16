@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiMata.ConfigureControlManage.Android", "QiMata.ConfigureControlManage\QiMata.ConfigureControlManage.Android\QiMata.ConfigureControlManage.Android.csproj", "{78BBCE6A-7E72-452F-9FD0-54587B37713B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android", "Mobile\Android\Android.csproj", "{78BBCE6A-7E72-452F-9FD0-54587B37713B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiMata.ConfigureControlManage", "QiMata.ConfigureControlManage\QiMata.ConfigureControlManage\QiMata.ConfigureControlManage.csproj", "{9B3C0CF4-A4C4-412D-9462-56D193C01270}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Mobile\Common\Common.csproj", "{9B3C0CF4-A4C4-412D-9462-56D193C01270}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiMata.ConfigureControlManage.UWP", "QiMata.ConfigureControlManage\QiMata.ConfigureControlManage.UWP\QiMata.ConfigureControlManage.UWP.csproj", "{AA75244C-0FDC-441B-A763-004B1882EF36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP", "Mobile\UWP\UWP.csproj", "{AA75244C-0FDC-441B-A763-004B1882EF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QiMata.ConfigureControlManage.iOS", "QiMata.ConfigureControlManage\QiMata.ConfigureControlManage.iOS\QiMata.ConfigureControlManage.iOS.csproj", "{273C57B6-799D-44ED-85A7-D94CD55A0B16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS", "Mobile\iOS\iOS.csproj", "{273C57B6-799D-44ED-85A7-D94CD55A0B16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform", "Platform", "{E3A955F6-C933-4BA4-9EB6-C643AE0DD987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -254,6 +256,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78BBCE6A-7E72-452F-9FD0-54587B37713B} = {E3A955F6-C933-4BA4-9EB6-C643AE0DD987}
+		{AA75244C-0FDC-441B-A763-004B1882EF36} = {E3A955F6-C933-4BA4-9EB6-C643AE0DD987}
+		{273C57B6-799D-44ED-85A7-D94CD55A0B16} = {E3A955F6-C933-4BA4-9EB6-C643AE0DD987}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A93DE9EF-16C0-43AC-B303-7A0D54743AD6}
