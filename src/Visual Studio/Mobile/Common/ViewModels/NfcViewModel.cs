@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QiMata.ConfigureControlManage.ViewModels
 {
-    class MainViewModel : ViewModelBase
+    class NfcViewModel : ViewModelBase
     {
     }
 }

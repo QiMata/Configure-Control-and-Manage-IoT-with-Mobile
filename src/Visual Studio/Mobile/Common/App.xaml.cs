@@ -12,7 +12,7 @@ namespace QiMata.ConfigureControlManage
         public App()
         {
             InitializeComponent();
-            MainPage = new Views.MainPage();
+            MainPage = new Views.TabPage();
         }
 
         protected override void OnStart()
