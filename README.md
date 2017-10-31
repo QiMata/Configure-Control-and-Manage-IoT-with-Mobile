@@ -1,6 +1,6 @@
 # Configure, Control, and Manage, IoT with Mobile
 
-[![Power Point Presentation](https://www.qimata.com/wp-content/uploads/2017/03/Azure-IoT-Stream-Analytics-SignalR-.pptx)](https://www.qimata.com/wp-content/uploads/2017/09/PowerPoint.png)
+[![Power Point Presentation](https://1drv.ms/p/s!AtGgG1OHESE29WM004XxSIIbO9-p)](https://jaredrhodescom.files.wordpress.com/2017/10/microsoft-powerpoint-document-icon-4-custom.png)
 
 # Resources
 
