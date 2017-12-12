@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:QiMata.ConfigureControlManage.ViewModels;assembly=QiMata.ConfigureControlManage"
+             xmlns:converter="clr-namespace:QiMata.ConfigureControlManage.Converter;assembly=QiMata.ConfigureControlManage"
              x:Class="QiMata.ConfigureControlManage.App">
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <viewModels:ViewModelLocator x:Key="ViewModelLocator"></viewModels:ViewModelLocator>
 
+            <converter:ToStringConverter x:Key="ToStringConverter"></converter:ToStringConverter>
+        </ResourceDictionary>
 	</Application.Resources>
 </Application>

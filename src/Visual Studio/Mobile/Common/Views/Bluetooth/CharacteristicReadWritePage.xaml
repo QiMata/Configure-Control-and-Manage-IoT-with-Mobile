@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QiMata.ConfigureControlManage.Views.Bluetooth.CharacteristicReadWritePage"
+             Title="{Binding Title}"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ContentView Padding="10">
+                <Label Text="{Binding ReadValue}" TextColor="White"></Label>
+            </ContentView>
+            <Entry TextColor="White" Text="{Binding WriteValue}"></Entry>
+            <Button Text="Write" Command="{Binding WriteCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

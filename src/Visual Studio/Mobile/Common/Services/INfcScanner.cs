@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QiMata.ConfigureControlManage.ViewModels
+namespace QiMata.ConfigureControlManage.Services
 {
-    class AzureViewModel : ViewModelBase
+    public interface INfcScanner
     {
+        Task<byte[]> Scan(TimeSpan timeout);
     }
 }

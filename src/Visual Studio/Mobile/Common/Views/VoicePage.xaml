@@ -3,12 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:QiMata.ConfigureControlManage.Views;assembly=QiMata.ConfigureControlManage"
              x:Class="QiMata.ConfigureControlManage.Views.VoicePage"
-                       Title="Voice">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+            Title="Voice"
+            BindingContext="{Binding Source={StaticResource ViewModelLocator},Path= VoiceViewModel}"
+            BackgroundColor="Black">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ListenCommand}" Text="Listen"></ToolbarItem>
+    </ContentPage.ToolbarItems>
 </views:BaseContentPage>

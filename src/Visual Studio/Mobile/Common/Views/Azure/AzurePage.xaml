@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:QiMata.ConfigureControlManage.Views;assembly=QiMata.ConfigureControlManage"
+             xmlns:models="clr-namespace:QiMata.ConfigureControlManage.Models;assembly=QiMata.ConfigureControlManage"
+             x:Class="QiMata.ConfigureControlManage.Views.Azure.AzurePage"
+             Title="Cloud"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=AzureViewModel}"
+             BackgroundColor="Black">
+    <StackLayout Padding="10">
+        <Label Text="{Binding Value}"
+            VerticalOptions="StartAndExpand" 
+            HorizontalOptions="CenterAndExpand"
+               TextColor="White"/>
+        <Button Text="Off" Command="{Binding OnSendCommand}">
+            <Button.CommandParameter>
+                <models:RelayConfiguration>Off</models:RelayConfiguration>
+            </Button.CommandParameter>
+        </Button>
+        <Button Text="First On" Command="{Binding OnSendCommand}">
+            <Button.CommandParameter>
+                <models:RelayConfiguration>FirstOn</models:RelayConfiguration>
+            </Button.CommandParameter>
+        </Button>
+        <Button Text="Second On" Command="{Binding OnSendCommand}">
+            <Button.CommandParameter>
+                <models:RelayConfiguration>SecondOn</models:RelayConfiguration>
+            </Button.CommandParameter>
+        </Button>
+        <Button Text="Both On" Command="{Binding OnSendCommand}">
+            <Button.CommandParameter>
+                <models:RelayConfiguration>FirstAndSecondOn</models:RelayConfiguration>
+            </Button.CommandParameter>
+        </Button>
+    </StackLayout>
+</views:BaseContentPage>

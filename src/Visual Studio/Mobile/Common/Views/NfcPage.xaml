@@ -3,12 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:QiMata.ConfigureControlManage.Views;assembly=QiMata.ConfigureControlManage"
              x:Class="QiMata.ConfigureControlManage.Views.NfcPage"
-                       Title="NFC">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+                       Title="NFC"
+                       BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=NfcViewModel}"
+                       BackgroundColor="Black">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding ScanCommand}" Text="Scan"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </views:BaseContentPage>

@@ -2,9 +2,27 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:QiMata.ConfigureControlManage.Views;assembly=QiMata.ConfigureControlManage"
+             xmlns:bluetooth="clr-namespace:QiMata.ConfigureControlManage.Views.Bluetooth;assembly=QiMata.ConfigureControlManage"
+             xmlns:azure="clr-namespace:QiMata.ConfigureControlManage.Views.Azure;assembly=QiMata.ConfigureControlManage"
              x:Class="QiMata.ConfigureControlManage.Views.TabPage">
-    <views:AzurePage></views:AzurePage>
-    <views:NfcPage></views:NfcPage>
-    <views:BluetoothScanPage></views:BluetoothScanPage>
-    <views:VoicePage></views:VoicePage>
+    <NavigationPage Title="Azure">
+        <x:Arguments>
+            <azure:AzurePage></azure:AzurePage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="NFC">
+        <x:Arguments>
+            <views:NfcPage></views:NfcPage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="BLE">
+        <x:Arguments>
+            <bluetooth:BluetoothScanPage></bluetooth:BluetoothScanPage>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Voice">
+        <x:Arguments>
+            <views:VoicePage></views:VoicePage>
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>

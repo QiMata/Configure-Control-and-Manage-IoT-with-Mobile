@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:QiMata.ConfigureControlManage.Converter;assembly=QiMata.ConfigureControlManage"
+             x:Class="QiMata.ConfigureControlManage.Views.Bluetooth.BluetoothScanPage"
+             Title="Bluetooth Low Energy"
+             BindingContext="{Binding Source={StaticResource ViewModelLocator}, Path=BluetoothScanViewModel}"
+             BackgroundColor="Black"
+             x:Name="BLEPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ToStringConverter x:Key="ToStringConverter"></converter:ToStringConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Scan" Command="{Binding ScanCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ListView ItemsSource="{Binding Devices}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding AdvertisementData.LocalName}" Detail="{Binding Rssi,StringFormat='Rssi{0}'}"
+                          TextColor="White" DetailColor="DarkGray" Command="{Binding Source={x:Reference BLEPage}, Path=BindingContext.DeviceTappedCommand}" CommandParameter="{Binding .}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

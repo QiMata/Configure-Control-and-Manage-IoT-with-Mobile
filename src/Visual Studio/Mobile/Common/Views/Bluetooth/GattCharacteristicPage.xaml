@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QiMata.ConfigureControlManage.Views.Bluetooth.GattCharacteristicPage"
+             Title="{Binding Title}"
+             BackgroundColor="Black"
+             x:Name="ContentPage">
+    <ListView ItemsSource="{Binding GattCharacteristics}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Uuid,Converter={StaticResource ToStringConverter}}" TextColor="White" 
+                          Detail="{Binding Value,Converter={StaticResource ToStringConverter}}" DetailColor="White" 
+                          Command="{Binding Source={x:Reference ContentPage},Path=BindingContext.GattTappedCommand}"
+                          CommandParameter="{Binding .}"></TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

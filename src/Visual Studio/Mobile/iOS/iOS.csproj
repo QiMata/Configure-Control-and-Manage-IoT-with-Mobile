@@ -95,6 +95,7 @@
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
+    <Compile Include="PlatformServices\NfcScanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
@@ -124,6 +125,18 @@
     </Reference>
     <Reference Include="Plugin.BluetoothLE.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.BluetoothLE.5.0.0\lib\Xamarin.iOS10\Plugin.BluetoothLE.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=2.0.0.28, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.0.28-beta\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.0.28-beta\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.SpeechRecognition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.SpeechRecognition.1.0.0-beta3\lib\Xamarin.iOS10\Plugin.SpeechRecognition.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.SpeechRecognition.Abstractions, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.SpeechRecognition.1.0.0-beta3\lib\Xamarin.iOS10\Plugin.SpeechRecognition.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />

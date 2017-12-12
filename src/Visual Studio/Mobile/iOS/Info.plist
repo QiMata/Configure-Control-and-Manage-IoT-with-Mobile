@@ -62,5 +62,9 @@
 
     <key>NSBluetoothPeripheralUsageDescription</key>
     <string>Need bluetooth permissions because this is a bluetooth demo</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Say something useful here</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Say something useful here</string>
   </dict>
 </plist>
