@@ -1,6 +1,6 @@
 # Configure, Control, and Manage, IoT with Mobile
 
-[![Power Point Presentation](https://1drv.ms/p/s!AtGgG1OHESE29WM004XxSIIbO9-p)](https://jaredrhodescom.files.wordpress.com/2017/10/microsoft-powerpoint-document-icon-4-custom.png)
+[![Power Point Presentation](https://jaredrhodescom.files.wordpress.com/2017/10/microsoft-powerpoint-document-icon-4-custom.png)](https://1drv.ms/p/s!AtGgG1OHESE29WM004XxSIIbO9-p)
 
 # Resources
 
@@ -20,9 +20,9 @@
 
 # Equipment
 
-[Adafruit Stuff]()
+[Adafruit Stuff](https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/overview)
 
-[Relay from Amazon]()
+[Relay from Amazon](https://www.amazon.com/gp/product/B00WV7GMA2/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1)
 
 # Abstract
 
