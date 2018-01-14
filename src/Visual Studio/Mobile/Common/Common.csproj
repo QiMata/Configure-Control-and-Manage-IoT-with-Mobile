@@ -138,10 +138,16 @@
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.BluetoothLE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.BluetoothLE.5.0.0\lib\netstandard1.0\Plugin.BluetoothLE.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.BluetoothLE.5.1.0\lib\netstandard1.0\Plugin.BluetoothLE.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.BluetoothLE.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.BluetoothLE.5.0.0\lib\netstandard1.0\Plugin.BluetoothLE.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.BluetoothLE.5.1.0\lib\netstandard1.0\Plugin.BluetoothLE.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.2.1\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.2.1\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.SpeechRecognition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.SpeechRecognition.1.0.0-beta3\lib\netstandard1.0\Plugin.SpeechRecognition.dll</HintPath>

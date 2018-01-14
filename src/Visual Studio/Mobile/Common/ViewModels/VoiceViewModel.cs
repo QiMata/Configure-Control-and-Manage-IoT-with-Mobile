@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Reactive.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Plugin.SpeechRecognition;
@@ -18,38 +19,64 @@ namespace QiMata.ConfigureControlManage.ViewModels
 
         public VoiceViewModel()
         {
-            ListenCommand = new Command(async () => await HandleVoiceInput());
+            ListenCommand = new Command(HandleVoiceInput);
         }
 
 
         public ICommand ListenCommand { get; }
 
-        private async Task HandleVoiceInput()
+        private void HandleVoiceInput()
         {
-            var granted = await CrossSpeechRecognition.Current.RequestPermission();
-            if (granted != SpeechRecognizerStatus.Available)
+            if (!CrossSpeechRecognition.Current.IsSupported)
             {
                 return;
             }
 
-            _listenerDisposable = CrossSpeechRecognition
-                .Current
-                .ListenForFirstKeyword(new []{"Off","On"})
-                .Subscribe(async phrase => {
-                    // will keep returning phrases as pause is observed
-                    if (phrase.Contains("Off"))
+            var granted = CrossSpeechRecognition.Current.RequestPermission()
+                .SubscribeOn(SynchronizationContext.Current)
+                .Subscribe(x =>
+            {
+                if (x != SpeechRecognizerStatus.Available)
+                {
+                    return;
+                }
+
+                _listenerDisposable = CrossSpeechRecognition
+                    .Current
+                    .ContinuousDictation()
+                    .Buffer(TimeSpan.FromSeconds(5))
+                    .Subscribe(async phrase =>
                     {
-                        await SendRelayConfiguration(RelayConfiguration.Off);
-                    }
-                    else if (phrase.Contains("Second") && phrase.Contains("On"))
-                    {
-                        await SendRelayConfiguration(RelayConfiguration.SecondOn);
-                    }
-                    else if (phrase.Contains("First") && phrase.Contains("On"))
-                    {
-                        await SendRelayConfiguration(RelayConfiguration.FirstOn);
-                    }
-                });
+                        try
+                        {
+                            if (phrase.Contains("Off") || phrase.Contains("off"))
+                            {
+                                await SendRelayConfiguration(RelayConfiguration.Off);
+                            }
+                            else if ((phrase.Contains("Second") || phrase.Contains("second")) &&
+                                     (phrase.Contains("On") || phrase.Contains("on")))
+                            {
+                                await SendRelayConfiguration(RelayConfiguration.SecondOn);
+                            }
+                            else if ((phrase.Contains("First") || phrase.Contains("first")) &&
+                                     (phrase.Contains("On") || phrase.Contains("on")))
+                            {
+                                await SendRelayConfiguration(RelayConfiguration.FirstOn);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            //Eat exception its a demo
+                        }
+                        // will keep returning phrases as pause is observed
+                    });
+            });
+           
+        }
+
+        private async Task VoiceInputMethod()
+        {
+            
         }
 
         public void OnDisappearing()

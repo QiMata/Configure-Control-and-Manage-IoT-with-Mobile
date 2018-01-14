@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Plugin.BluetoothLE;
+using Plugin.Permissions;
 using QiMata.ConfigureControlManage.Views.Bluetooth;
 using Xamarin.Forms;
 
@@ -28,52 +29,42 @@ namespace QiMata.ConfigureControlManage.ViewModels.Bluetooth
         {
             if (CrossBleAdapter.Current.IsScanning)
             {
-                return;
+                CrossBleAdapter.Current.ScanListen()
+                    .Subscribe(HandleScanResult);
+            }
+            else
+            {
+                // discover some devices
+                CrossBleAdapter.Current.Scan(new ScanConfig
+                {
+                    ScanType = BleScanType.Balanced
+                }).Subscribe(HandleScanResult);
             }
 
-            // discover some devices
-            CrossBleAdapter.Current.Scan(new ScanConfig
+            
+        }
+
+        private void HandleScanResult(IScanResult scanResult)
+        {
+            int previousIndex = -1;
+
+            for (int i = 0; i < Devices.Count; i++)
             {
-                ScanType = BleScanType.Balanced,
-                ServiceUuid = Guid.Parse("FE08FF91-8B9D-4D4D-9135-4A8F376D2F09")
-            }).Subscribe(scanResult =>
+                if (Devices[i].Device.Uuid == scanResult.Device.Uuid)
+                {
+                    previousIndex = i;
+                    break;
+                }
+            }
+
+            if (previousIndex == -1)
             {
-                int previousIndex = -1;
-
-                for (int i = 0; i < Devices.Count; i++)
-                {
-                    if (Devices[i].Device.Uuid == scanResult.Device.Uuid)
-                    {
-                        previousIndex = i;
-                        break;
-                    }
-                }
-
-                if (previousIndex == -1)
-                {
-                    Devices.Add(scanResult);
-                }
-                else
-                {
-                    Devices[previousIndex] = scanResult;
-                }
-
-                // Once finding the device/scanresult you want
-                //await scanResult.Device.Connect();
-
-                //scanResult.Device.WhenAnyCharacteristicDiscovered().Subscribe(async characteristic =>
-                //{
-                //    // read, write, or subscribe to notifications here
-                //    var charResult = await characteristic.Read().SingleAsync(); // use result.Data to see response
-                //    //await characteristic.Write(bytes);
-
-                //    await characteristic.EnableNotifications();
-                //    characteristic.WhenNotificationReceived().Subscribe(result =>
-                //    {
-                //        //result.Data to get at response
-                //    });
-                //});
-            });
+                Devices.Add(scanResult);
+            }
+            else
+            {
+                Devices[previousIndex] = scanResult;
+            }
         }
 
         public ICommand DeviceTappedCommand { get; }

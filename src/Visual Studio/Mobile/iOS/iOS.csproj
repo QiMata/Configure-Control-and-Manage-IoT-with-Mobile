@@ -50,6 +50,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -121,16 +122,16 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.BluetoothLE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.BluetoothLE.5.0.0\lib\Xamarin.iOS10\Plugin.BluetoothLE.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.BluetoothLE.5.1.0\lib\Xamarin.iOS10\Plugin.BluetoothLE.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.BluetoothLE.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.BluetoothLE.5.0.0\lib\Xamarin.iOS10\Plugin.BluetoothLE.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.BluetoothLE.5.1.0\lib\Xamarin.iOS10\Plugin.BluetoothLE.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions, Version=2.0.0.30, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.2.0.0.30-beta\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    <Reference Include="Plugin.Permissions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.2.0.0.30-beta\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.SpeechRecognition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.SpeechRecognition.1.0.0-beta3\lib\Xamarin.iOS10\Plugin.SpeechRecognition.dll</HintPath>

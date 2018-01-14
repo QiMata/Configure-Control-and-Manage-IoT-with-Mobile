@@ -9,7 +9,7 @@
             <ContentView Padding="10">
                 <Label Text="{Binding ReadValue}" TextColor="White"></Label>
             </ContentView>
-            <Entry TextColor="White" Text="{Binding WriteValue}"></Entry>
+            <Entry TextColor="White" Text="{Binding WriteValue}" BackgroundColor="Black"></Entry>
             <Button Text="Write" Command="{Binding WriteCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

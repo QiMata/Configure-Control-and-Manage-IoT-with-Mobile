@@ -5,7 +5,7 @@
              Title="{Binding Title}"
              BackgroundColor="Black"
              x:Name="ContentPage">
-    <ListView ItemsSource="{Binding GattCharacteristics}">
+    <ListView ItemsSource="{Binding GattCharacteristics}" BackgroundColor="Black">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Uuid,Converter={StaticResource ToStringConverter}}" TextColor="White" 

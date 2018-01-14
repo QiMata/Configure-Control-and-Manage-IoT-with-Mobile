@@ -15,7 +15,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Scan" Command="{Binding ScanCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ListView ItemsSource="{Binding Devices}">
+    <ListView ItemsSource="{Binding Devices}" BackgroundColor="Black">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding AdvertisementData.LocalName}" Detail="{Binding Rssi,StringFormat='Rssi{0}'}"

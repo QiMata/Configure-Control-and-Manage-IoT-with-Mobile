@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Plugin.BluetoothLE;
+using Plugin.SpeechRecognition;
 using UIKit;
 
 namespace QiMata.ConfigureControlManage.iOS
@@ -23,6 +25,7 @@ namespace QiMata.ConfigureControlManage.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            CrossBleAdapter.Init(new BleAdapterConfiguration());
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
